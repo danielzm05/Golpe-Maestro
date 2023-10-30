@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="stylesheet" href="assets/css/fight.css">
+  <title>Golpe Maestro</title>
+</head>
+
+<body>
+
+  <div id="game-board">
+    <div id="score-board">
+
+      <!--P1 Health Bar -->
+      <div id="player1-health-container">
+        <div id="player1-health-border"></div>
+        <div id="player1-health">
+        </div>
+      </div>
+      <!-- Timer -->
+      <div id="timer">10</div>
+
+      <!--P2 Health Bar -->
+      <div class="healthBarContainer">
+        <div class="healthBarBorder"></div>
+        <div id="player2-health" class="healthBar"></div>
+      </div>
+    </div>
+
+    <div id=game-alert class="alert zoomInUp">Tie</div>
+    <canvas></canvas>
+
+  </div>
+
+  <script src="assets/js/objects.js"></script>
+  <script src="assets/js/functions.js"></script>
+  <script src="assets/js/classes.js"></script>
+  <script src="assets/js/fight.js"></script>
+</body>
+
+</html>

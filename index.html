@@ -6,42 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Golpe Maestro</title>
+  <link rel="stylesheet" href="assets/css/characters.css">
+  <link rel="stylesheet" href="assets/css/stages.css">
+  <title>Golpe de Maestro</title>
 </head>
 
 <body>
-
-  <div id="game-board">
-    <div id="score-board">
-
-      <!--P1 Health Bar -->
-      <!--       <div id="player1-health-container" class="healthBarContainer">
-        <div id="player1-health-border" class="healthBarBorder"></div>
-        <div id="player1-health" class="healthBar"></div>
-      </div>
- -->
-      <div id="player1-health-container">
-        <div id="player1-health-border"></div>
-        <div id="player1-health"></div>
-      </div>
-      <!-- Timer -->
-      <div id="timer">10</div>
-
-      <!--P2 Health Bar -->
-      <div class="healthBarContainer">
-        <div class="healthBarBorder"></div>
-        <div id="player2-health" class="healthBar"></div>
-      </div>
-
+  <main>
+    <div class="play-screen">
+      <a href="#"><input type="submit" id="play" value="▶"></a>
     </div>
-    <div id=game-alert class="alert">Tie</div>
-    <canvas></canvas>
 
-  </div>
+    <div class="menu">
+      <div class="logo zoomInDown"></div>
+      <div class="options">
+        <a href="#"><input type="submit" id="start" class="option start-option" value="START GAME"></a>
+        <a href="controls.html"><input type="submit" class="option" value="HOW TO PLAY"></a>
+        <a href="#"><input type="submit" class="option" value="CREDITS"></a>
+      </div>
+    </div>
 
-  <script src="assets/js/utils.js"></script>
-  <script src="assets/js/classes.js"></script>
-  <script src="assets/js/main.js"></script>
+    <div class="characters">
+      <h1>CHOOSE YOUR FIGHTER</h1>
+      <div class="characters-menu">
+        <div class="player-1"></div>
+
+        <div class="characters-selector">
+          <div class="characters-list"></div>
+        </div>
+
+        <div class="player-2"></div>
+      </div>
+    </div>
+
+    <div class="stages">
+      <h1>SELECT A PLACE TO FIGHT</h1>
+      <div class="stages-menu">
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/objects.js"></script>
+  <script id="main-script" src="assets/js/main.js"></script>
 </body>
 
 </html>
