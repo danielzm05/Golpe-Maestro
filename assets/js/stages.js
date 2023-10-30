@@ -39,7 +39,7 @@ document.addEventListener("keydown", function (e) {
     stageIcon[stageActive].click()
     selection.stage = stages[stageActive]
     sessionStorage.setItem("selection", JSON.stringify(selection));
-    window.location.href = "../fight.html";
+    window.location.href = "./fight.html";
     e.preventDefault();
   }
 
