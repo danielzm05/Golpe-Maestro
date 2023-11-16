@@ -35,10 +35,15 @@ document.addEventListener("keydown", function (e) {
     stageActive = (stageActive > 2) ? stageActive -= 3 : stageActive;
     selected(stageIcon[stageActive]);
 
-  } else if (e.key == " ") {
+  } else if (e.key == " " || e.key == "Enter") {
+
+    //Si selecciona la opción Aleatorio
+    if (stageActive = 5) {
+      stageActive = Math.floor(Math.random() * (4 - 0 + 1) + 0)
+    }
     stageIcon[stageActive].click()
     selection.stage = stages[stageActive]
-    sessionStorage.setItem("selection", JSON.stringify(selection));
+    localStorage.setItem("selection", JSON.stringify(selection));
     window.location.href = "./fight.html";
     e.preventDefault();
   }

@@ -86,15 +86,31 @@ body {
 .alert {
   position: absolute;
   display: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.alert h1 {
   font-size: 100px;
   color: #f5f5f5;
   text-shadow: 0px -2px 4px #fff, 0px -2px 10px #FF3, 0px -10px 20px #F90, 0px -20px 40px #C33;
+}
+
+.alert input {
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #f22f46;
+}
+
+.alert input:hover {
+  text-decoration: underline;
 }
 
 .zoomInUp {

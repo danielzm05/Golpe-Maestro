@@ -12,11 +12,11 @@ function determinateWinner({ player, enemy }) {
   gameAlert.style.display = 'flex'
 
   if (player.health === enemy.health) {
-    gameAlert.innerHTML = 'TIE'
+    gameAlertMessage.innerHTML = 'TIE'
   } else if (player.health > enemy.health) {
-    gameAlert.innerHTML = selection.player1.name + " WINS"
+    gameAlertMessage.innerHTML = selection.player1.name + " WINS"
   } else if (player.health < enemy.health) {
-    gameAlert.innerHTML = selection.player2.name + " WINS"
+    gameAlertMessage.innerHTML = selection.player2.name + " WINS"
   }
 }
 

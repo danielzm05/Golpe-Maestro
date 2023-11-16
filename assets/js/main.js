@@ -17,6 +17,7 @@ playBtn.addEventListener("click", function () {
   playScreen.style.display = "none";
   menuScreen.style.display = "flex";
   soundtrack.play();
+  localStorage.clear()
 });
 
 

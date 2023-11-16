@@ -131,13 +131,14 @@ let stages = [
   { id: 2, name: "PATIO", icon: "./assets/img/stages/Icons/Patio-Icon.png", background: "./assets/img/stages/Patio.png", soundtrack: "./assets/sounds/soundtracks/Patio.mp3" },
   { id: 3, name: "VIAS", icon: "./assets/img/stages/Icons/Vias-Icon.png", background: "./assets/img/stages/Vias.png", soundtrack: "./assets/sounds/soundtracks/Vias.mp3" },
   { id: 4, name: "RING", icon: "./assets/img/stages/Icons/Ring-Icon.png", background: "./assets/img/stages/Ring.png", soundtrack: "./assets/sounds/soundtracks/Ring.mp3" },
+  { id: 5, name: "ALEATORIO", icon: "./assets/img/stages/Icons/Aleatorio-Icon.png", background: "", soundtrack: "" }
 ]
 
-let selection = JSON.parse(sessionStorage.getItem("selection")) || {
+let selection = {
   stage: {},
   player1: {},
   player2: {},
 }
 
-sessionStorage.setItem("selection", JSON.stringify(selection));
+
 

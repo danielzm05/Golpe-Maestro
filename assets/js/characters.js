@@ -5,6 +5,7 @@ const stagesScreen = document.querySelector('.stages')
 const charactersScript = document.querySelector('#characters-script')
 let iconSound = new Audio("./assets/sounds/Icon.mp3");
 let P1Selected
+let P2Selected
 let active = 0
 
 //Creacion de los Iconos
@@ -34,8 +35,6 @@ P2Presentation.append(P2Title)
 P2Presentation.append(P2Skin)
 P2Presentation.append(P2characteristics)
 
-
-
 let icon = document.querySelectorAll('.character-icon');
 let iconTitle = document.querySelectorAll('.icon-title')
 // Añadir la clase selected al primer elemento por defecto
@@ -62,18 +61,16 @@ document.addEventListener("keydown", function (e) {
     active = (active > 2) ? active -= 3 : active;
     playerSelected(icon[active], iconTitle[active])
 
-  } else if (e.key == " ") {
+  } else if (e.key == " " || e.key == "Enter") {
 
     if (!P1Selected) {
       P1Selected = characters[active]
       playerSelected(icon[active], iconTitle[active])
-      selection.player1 = characters[active]
-      sessionStorage.setItem("selection", JSON.stringify(selection));
+      selection.player1 = P1Selected
 
-    } else {
-
-      selection.player2 = characters[active]
-      sessionStorage.setItem("selection", JSON.stringify(selection));
+    } else if (P1Selected && !P2Selected) {
+      P2Selected = characters[active]
+      selection.player2 = P2Selected
 
       charactersScreen.style.display = "none";
       stagesScreen.style.display = "flex";

@@ -1,7 +1,9 @@
 const P1HealthBar = document.querySelector('#player1-health')
 const P2HealthBar = document.querySelector('#player2-health')
 const gameAlert = document.querySelector('#game-alert')
+const gameAlertMessage = document.querySelector('#message')
 const clock = document.querySelector('#timer')
+const selection = JSON.parse(localStorage.getItem("selection"));
 
 //Sounds
 let soundtrack = new Audio(selection.stage.soundtrack);
@@ -61,7 +63,6 @@ const enemy = new Fighter({
     height: 10
   },
   player2: true
-
 })
 
 //infinitive Loop
@@ -109,7 +110,7 @@ function animate() {
   }
 
   //Detectar ataque de P1 a P2
-  if (rectagularCollision({ rectangle1: player, rectangle2: enemy }) && player.isAttaking && player.framesCurrent === 3) {
+  if (rectagularCollision({ rectangle1: player, rectangle2: enemy }) && player.isAttaking) {
     player.isAttaking = false
     enemy.takeHit()
     P2HealthBar.style.width = enemy.health + '%'
@@ -119,8 +120,9 @@ function animate() {
   if (player.isAttaking && player.framesCurrent === 3) {
     player.isAttaking = false
   }
+
   //Detectar ataque de P2 a P1
-  if (rectagularCollision({ rectangle1: enemy, rectangle2: player }) && enemy.isAttaking && enemy.framesCurrent === 3) {
+  if (rectagularCollision({ rectangle1: enemy, rectangle2: player }) && enemy.isAttaking) {
     enemy.isAttaking = false
     player.takeHit()
     P1HealthBar.style.width = player.health + '%'
@@ -187,7 +189,6 @@ window.addEventListener('keydown', (event) => {
       case 's':
         player.dance()
         break;
-
     }
   }
 
